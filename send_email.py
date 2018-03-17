@@ -1,6 +1,6 @@
 def send_email(user, pwd, recipient, subject, body):
     import smtplib
-
+    
     FROM = user
     TO = recipient if type(recipient) is list else [recipient]
     SUBJECT = subject
