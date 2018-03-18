@@ -1,11 +1,12 @@
+#!/usr/bin/env python3
 import requests
 import requests.auth
 import json
 from creds import *
 from send_email import send_email
+from recipients import RECIPIENTS
 
 USER_AGENT = "SongsOfTheDay/0.1 by %s" %(REDDIT_USER)
-RECIPIENTS = ["me@shaunschwartz.com"]
 NUM_OF_SONGS = 5 # Maximum is 25
 
 def get_token():

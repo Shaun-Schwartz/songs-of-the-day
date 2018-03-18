@@ -1,0 +1,1 @@
+RECIPIENTS = ["user@email.com"]
