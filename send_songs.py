@@ -7,7 +7,7 @@ from send_email import send_email
 from recipients import RECIPIENTS
 
 USER_AGENT = "SongsOfTheDay/0.1 by %s" %(REDDIT_USER)
-NUM_OF_SONGS = 5 # Maximum is 25
+NUM_OF_SONGS = 5 # Maximum is 25 
 
 def get_token():
     client_auth = requests.auth.HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET)
