@@ -34,4 +34,4 @@ def get_songs():
 
 msg = get_songs()
 
-# send_email(EMAIL_USER, EMAIL_PWD, RECIPIENTS, "SongsOfTheDay", msg)
+send_email(EMAIL_USER, EMAIL_PWD, RECIPIENTS, "SongsOfTheDay", msg)
