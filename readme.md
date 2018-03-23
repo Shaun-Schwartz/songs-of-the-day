@@ -13,7 +13,7 @@ Create creds.py:
 mv creds.example.py creds.py
 ```
 
-Edit creds.py with the appropriate info. A Reddit ID and secret can be obtained by creating an authorized app https://www.reddit.com/prefs/apps
+Edit creds.py with the appropriate info. A Gmail account and Reddit account are required. A Reddit ID and secret can be obtained by creating an authorized app https://www.reddit.com/prefs/apps
 
 Add recipient email addresses to recipients.py.
 

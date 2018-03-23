@@ -1,5 +1,5 @@
-# EMAIL CREDS (used to send email)
-EMAIL_USER = 'user@email.com'
+# EMAIL CREDS (used to send email) - must be Gmail - 
+EMAIL_USER = 'user@gmail.com'
 EMAIL_PWD = 'password'
 # REDDIT API
 CLIENT_ID = 'client_id'

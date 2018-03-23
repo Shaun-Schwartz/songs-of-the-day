@@ -2,7 +2,6 @@
 import requests
 import requests.auth
 import json
-from email.mime.text import MIMEText
 from creds import *
 from send_email import send_email
 from recipients import RECIPIENTS
@@ -21,17 +20,17 @@ def get_songs():
     token = get_token()
     msgText = ''
     headers = {"Authorization": f'bearer {token}', "User-Agent": USER_AGENT}
-    response = requests.get("https://oauth.reddit.com/r/listentothis/top/?t=day/.json", headers=headers).json()
+    response = requests.get(f"https://oauth.reddit.com/r/listentothis/top/?t=day/.json?limit={NUM_OF_SONGS}", headers=headers).json()
     for i in range(NUM_OF_SONGS):
         try:
             title = response["data"]["children"][i]["data"]["secure_media"]["oembed"]["title"]
             thumbnail = response["data"]["children"][i]["data"]["secure_media"]["oembed"]["thumbnail_url"]
             media_url = response["data"]["children"][i]["data"]["url"]
             link = "https://www.reddit.com" + response["data"]["children"][i]["data"]["permalink"]
-            msgText += f"{i+1}: {title} \n{media_url} \n{link} \n \n \n "
+            msgText += f"{i+1}   {title} \n{media_url} \n{link} \n \n \n "
         except:
             pass
     return msgText
 
-msg = MIMEText(get_songs(), 'html', 'utf8')
-send_email(EMAIL_USER, EMAIL_PWD, RECIPIENTS, "SongsOfTheDay", msg)
+# msg = get_songs()
+# send_email(EMAIL_USER, EMAIL_PWD, RECIPIENTS, "SongsOfTheDay", msg)
