@@ -2,6 +2,7 @@
 import requests
 import requests.auth
 import json
+from email.mime.text import MIMEText
 from creds import *
 from send_email import send_email
 from recipients import RECIPIENTS
@@ -32,5 +33,5 @@ def get_songs():
             pass
     return msgText
 
-# msg = get_songs()
-# send_email(EMAIL_USER, EMAIL_PWD, RECIPIENTS, "SongsOfTheDay", msg)
+msg = MIMEText(get_songs(), 'html', 'utf8')
+send_email(EMAIL_USER, EMAIL_PWD, RECIPIENTS, "SongsOfTheDay", msg)
